@@ -51,20 +51,15 @@ end
 # Person 4
 
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
   source.each { |word| source.delete(word) if word.include? thing_to_delete }
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
   source.delete(thing_to_delete)
   source
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
 # .each method to iterate over the array.
 # .delete method to remove the item from array or hash.
 
