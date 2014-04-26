@@ -20,21 +20,26 @@
 
 # 2. Initial Solution
 def separate_comma(num)
-  str = num.to_s
+  number = num.to_s
   position = -4
-  if str.length < 4
-    str
-  elsif str.length % 3 == 0
-    ((str.length/3) - 1).times { str.insert(position, ","); position -= 4 }
-    str
+  if number.length < 4
+    number
+  elsif number.length % 3 == 0
+    ((number.length/3) - 1).times { number.insert(position, ","); position -= 4 }
+    number
   else
-    (str.length/3).times { str.insert(position, ","); position -= 4 }
-    str
+    (number.length/3).times { number.insert(position, ","); position -= 4 }
+    number
   end
 end
-# 3. Refactored Solution
-# I don't have anything better. Is it possible to make it even more readable and efficient?
 
+# 3. Refactored Solution
+def separate_comma(num)
+  number = num.to_s
+  i = 3
+  number.length < 4 ? number : (number.length/3 - 1).times { number.insert((number.length - i), ","); i += 4 }
+  number
+end
 
 # 4. Reflection 
 # Orginally I thought it would be fun to use recursion for this. But as I started, 
