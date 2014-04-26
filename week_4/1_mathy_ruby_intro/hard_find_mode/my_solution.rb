@@ -33,11 +33,11 @@
 # 2. Initial Solution
 def mode(arr)
   count = Hash.new(0)
-  arr.each { |v| count[v] += 1 }
-  count = count.sort_by { |k, v| v }
+  arr.each { |value| count[value] += 1 }
+  count = count.sort_by { |key, value| value }
   count.reverse!
   high = count[0][1]
-  count.select! {|k, v| v == high} 
+  count.select! { |key, value| value == high } 
   result = count.collect(&:first)
   result.sort!
 end
@@ -50,3 +50,6 @@ def mode(arr)
   count.select! { |key, value| value == count[0][1] }.collect(&:first).sort
 end
 # 4. Reflection 
+
+
+

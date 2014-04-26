@@ -10,26 +10,20 @@
 # Also make sure each step is necessary. If you don't think it's necessary
 # Try implementing the code without it. 
 
-def translate_to_cipher(sentence)
-    alphabet = ('a'..'z').to_a
-    cipher = Hash[alphabet.zip(alphabet.rotate(4))]
-    spaces = ["@", "#", "$", "%", "^", "&", "*"]
-    
-    original_sentence = sentence.downcase
+def north_korean_cipher(coded_message)
+  cipher = Hash[*(("e".."z").to_a + ("a".."d").to_a).zip(("a".."z").to_a).flatten]
     encoded_sentence = []
-    original_sentence.each_char do |element|
+    coded_message.downcase.each_char do |element|
       if cipher.include?(element)
-        encoded_sentence << cipher[element]
-      elsif element == ' '
-        encoded_sentence << spaces.sample
+          encoded_sentence << cipher[element]
+      elsif x == "@" || x == "#" || x == "$" || x == "%"|| x == "^" || x == "&"|| x =="*" #check for symbols to convert to spaces
+          encoded_sentence << " "
       else 
         encoded_sentence << element
       end
-     end
-    
+    end
     return encoded_sentence.join
 end
-
 
 # Questions:
 # 1. What is the .to_a method doing?
@@ -44,10 +38,14 @@ end
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 # Does this return the same thing every time?
-p translate_to_cipher("I want cookies")
-p translate_to_cipher("I want cookies")
-p translate_to_cipher("I want cookies")
-p translate_to_cipher("I want cookies")
+p north_korean_cipher("m^aerx%e&gsoi!") == "i want a coke!" #This is driver code and should print true
+# Find out what Kim Jong Un is saying below and turn it into driver code as well. Driver Code statements should always return "true"
+p north_korean_cipher("syv@tistpi$iex#xli*qswx*hipmgmsyw*erh*ryxvmxmsyw%jsshw^jvsq^syv#1000000#tvsjmxefpi$jevqw.")
+p north_korean_cipher("syv%ryoiw#evi#liph^xskixliv@fc^kveti-jpezsvih@xsjjii.*hsr'x%xipp&xli#yw!")
+p north_korean_cipher("mj^csy&qeoi^sri*qmwxeoi,%kir.*vm@csrk-kmp,&csy^ampp*fi&vitpegih*fc@hirrmw&vshqer.")
+p north_korean_cipher("ribx^wxst:$wsyxl%osvie,$xlir$neter,#xlir%xli%asvph!")
+p north_korean_cipher("ger^wsqifshc*nywx^kix^qi&10000*fekw@sj$gssp%vergl@hsvmxsw?")
+
 
 
 
