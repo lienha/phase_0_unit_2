@@ -37,11 +37,13 @@ end
 def separate_comma(num)
   number = num.to_s
   i = 3
-  number.length < 4 ? number : (number.length/3 - 1).times { number.insert((number.length - i), ","); i += 4 }
+  until number.length - i <= 0
+    number.insert(number.length - i,","); i += 4
+  end
   number
 end
 
 # 4. Reflection 
 # Orginally I thought it would be fun to try recursion even if it's not
-# fast as looping. But as I started, I just couldn't get it to work. 
-# Anyway, I just can't have enough of ternary conditional expression.
+# fast as looping. But I just couldn't get it to work. 
+# I'm also interested in how this can be done with .each
