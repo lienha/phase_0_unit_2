@@ -99,4 +99,5 @@ p north_korean_cipher("ribx^wxst:$wsyxl%osvie,$xlir$neter,#xlir%xli%asvph!")
 p north_korean_cipher("ger^wsqifshc*nywx^kix^qi&10000*fekw@sj$gssp%vergl@hsvmxsw?")
 
 # Reflection
- # Our refactored solution looks a lot more streamline than it was thanks to the reverse cipher challenge. Regular expression used here is something I need to look into.
+ # Our refactored solution looks a lot more streamline than it was thanks to the reverse cipher challenge. 
+ # Regular expression used here is something I need to look into.
