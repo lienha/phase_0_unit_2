@@ -45,5 +45,5 @@ end
 
 # 4. Reflection 
 # Orginally I thought it would be fun to try recursion even if it's not
-# fast as looping. But I just couldn't get it to work. 
+# as fast as looping. After spending hours, I just couldn't get it to work. 
 # I'm also interested in how this can be done with .each
