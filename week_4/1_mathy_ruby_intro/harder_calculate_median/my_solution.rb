@@ -16,6 +16,7 @@
   # - If array has odd number of elements, return the element in the middle.
 
 # 2. Initial Solution
+
 def median(array)
   array = array.sort!
   if array.length % 2 == 0
@@ -25,14 +26,13 @@ def median(array)
   end
 end
 
-# 3. Refactored Solution
+# # 3. Refactored Solution
+
 def median(array)
   array = array.sort!
-  if array.length % 2 == 0
-    0.5 * (array[array.length/2] + array[array.length/2 - 1])
-  else 
-    array[(array.length-1)/2]
-  end
+  array.length % 2 == 0 ? 0.5 * (array[array.length/2] + array[array.length/2 - 1])  : array[(array.length - 1) / 2]
 end
 
 # 4. Reflection 
+
+# I found this is a useful exercise for if/else statement.

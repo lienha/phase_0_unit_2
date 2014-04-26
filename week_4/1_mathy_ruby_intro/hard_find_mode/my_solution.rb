@@ -50,6 +50,6 @@ def mode(arr)
   count.select! { |key, value| value == count[0][1] }.collect(&:first).sort
 end
 # 4. Reflection 
-
+# After having the hash with items in high frequencies appear first, we took quite a while figuring out what method to pick them out of the hash and put them into an array. Once that was accomplished, refacting to make it more readable was a breeze.
 
 

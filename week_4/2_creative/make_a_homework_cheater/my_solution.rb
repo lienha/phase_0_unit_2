@@ -5,9 +5,13 @@
 
 # 2. Pseudocode
 
-# Input:
-# Output:
-# Steps:
+# Input: a method with 5 arguments
+# Output: an essay
+# Steps: 
+  # create a method that takes 5 arguments: tittle, topic, date,thesis_statement and pronoun
+  # create variables to change the pronoun appropriately base on grammar.
+  # create variable for first_name and last_name as they need to trade positions.
+  # add those variables and strings together to turn them into an essay.
 
 
 # 3. Initial Solution
@@ -60,19 +64,8 @@ in The Horse Whisperer (1998) and Ghost World (2001).",
 
 # 4. Refactored Solution
 
-
-
-
-
-
-
-
-
-
-
-
-
+Nothing here.
 
 # 5. Reflection 
-
+It was a bit confusing at first what the exercise asked for and how to write the driver test code. 
 

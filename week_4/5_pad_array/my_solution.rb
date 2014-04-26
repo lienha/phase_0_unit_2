@@ -27,6 +27,7 @@
 
 
 # 2. Initial Solution
+
 class Array
   def pad!(number, filler = nil)
     if self.length >= number
@@ -52,6 +53,7 @@ class Array
 end
 
 # 3. Refactored Solution
+
 class Array
   def pad!(number, filler = nil)
     self.length >= number ? self : (number - self.length).times { self << filler }
@@ -66,3 +68,5 @@ class Array
 end
 
 # 4. Reflection 
+
+# It was enlightening to see out how pad method that takes only two argument could refer back to the array. It was also fun to be able to use ternary conditional expression to make the code looks more efficient.

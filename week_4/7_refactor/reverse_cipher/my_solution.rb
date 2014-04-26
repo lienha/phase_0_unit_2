@@ -53,4 +53,4 @@ p translate_to_cipher("I want cookies")
 
 
 # 5. Reflection 
-
+# The original code in this exercise looks a lot more efficient that the one in the cipher challenge. We only removed a few lines by chaining and inserting variable directly in. We found .rotate method used here save a lot of work. Seeing this exercise made us go back to refactor the cipher challenge further.

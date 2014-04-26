@@ -33,7 +33,7 @@ def separate_comma(num)
   end
 end
 # 3. Refactored Solution
-# Is it possible to make the code more DRY?
+# I don't have anything better. Is it possible to make it even more readable and efficient?
 
 
 # 4. Reflection 
