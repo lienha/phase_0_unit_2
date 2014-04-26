@@ -16,7 +16,7 @@
     # Convert the number into a string
     # Set the comma insertion position
     # Return the string if it is less than 4
-    # Otherwise iterate over the string and insert comma every 3 position from the right
+    # Otherwise iterate over the string and insert comma every 3rd position from the right
 
 # 2. Initial Solution
 def separate_comma(num)
