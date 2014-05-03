@@ -1,10 +1,10 @@
 # U2.W5: Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself].
 
 # EXPLANATION OF require_relative
-#
-#
+# This file can pull data from state_data
+
 require_relative 'state_data'
 
 class VirusPredictor
@@ -17,50 +17,40 @@ class VirusPredictor
     @next_region = regional_spread
   end
 
-  def virus_effects  #HINT: What is the SCOPE of instance variables?
+  def virus_effects 
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
-  private  #what is this?  what happens if it were cut and pasted above the virus_effects method
+  private  
 
   def predicted_deaths(population_density, population, state)
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else 
-      number_of_deaths = (@population * 0.05).floor
+    case population_density
+      when (0...50) then multipler = 0.05
+      when (50...100) then multipler = 0.1
+      when (100...150) then multipler = 0.2
+      when (150...200) then multipler = 0.3
+      else multipler = 0.4
     end
+    number_of_deaths = (@population * multipler).floor
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
 
   def speed_of_spread(population_density, state) #in months
-    speed = 0.0
-
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else 
-      speed += 2.5
+    case population_density
+      when (0...50) then speed = 2.5
+      when (50...100) then speed = 2
+      when (100...150) then speed = 1.5
+      when (150...200) then speed = 1
+      else speed = 0.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
-
 end
+
 
 #=======================================================================
 
@@ -79,3 +69,7 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population], STATE_DATA["Alaska"][:region], STATE_DATA["Alaska"][:regional_spread]) 
 alaska.virus_effects
+
+#population density is number of people per square mile as of 2012
+#this data is updated every year with estimates from a 10 year census 
+
