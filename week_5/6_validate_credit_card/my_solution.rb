@@ -51,7 +51,7 @@ class CreditCard
       i -= 2
     end
     @card = @card.to_s.chars.map(&:to_i)
-    @card.reduce(:+) % 10 == 0 ? true : false
+    @card.reduce(:+) % 10 == 0
   end
 end
 
