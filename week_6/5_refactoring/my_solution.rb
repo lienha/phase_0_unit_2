@@ -42,3 +42,5 @@ assert { card.check_card == true }
 another_card = CreditCard.new(4408041234567892)
 assert { another_card.check_card == false }
 # Reflection 
+# In refactored solution, I only added attr_reader :card so in later method, the instance variable was
+# not used.
