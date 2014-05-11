@@ -1,7 +1,7 @@
 # U2.W6: PezDispenser Class from User Stories
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # 1. Review the following user stories:
 # - As a pez user, I'd like to be able to "create" a new pez dispenser with a group of flavors that 
@@ -15,25 +15,64 @@
 
 
 # 2. Pseudocode
-
+# create a class PezDispenser
+# create an initialize method that takes flavors as an argument.
+# create see_all_pez method that returns all pez.
+# create a get_pez method that returns the pez.
+# create an add method that return the pez added.
+# create a method count that returns what left in a dispenser.
 
 
 # 3. Initial Solution
 
 class PezDispenser
- 
-# your code here!
- 
+  attr_reader :flavors
+  def initialize(flavors)
+    @flavors = flavors
+  end
+
+  def see_all_pez
+     "#{flavors}"
+  end
+
+  def get_pez
+     flavors.sample
+  end
+
+  def add_pez(pez)
+     flavors << pez
+     puts "added #{pez}"
+  end
+
+  def pez_count
+     flavors.size
+  end
 end
  
-
-
 # 4. Refactored Solution
+class PezDispenser
+  attr_reader :flavors
+  def initialize(flavors)
+    @flavors = flavors
+  end
 
+  def see_all_pez
+     "#{flavors}"
+  end
 
+  def get_pez
+     flavors.sample
+  end
 
+  def add_pez(pez)
+     flavors << pez
+     puts "added #{pez}"
+  end
 
-
+  def pez_count
+     flavors.size
+  end
+end
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
@@ -49,7 +88,6 @@ puts "Oh, you want one do you?"
 puts "The pez flavor you got is: #{super_mario.get_pez}"
 puts "Now you have #{super_mario.pez_count} pez!"
 
-
-
-
 # 5. Reflection 
+# I don't see how I can further refactor. This is a straight-forward exercise.
+# I learned to use sample method for the first time.
