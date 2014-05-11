@@ -31,7 +31,7 @@ class Song
 end
 
 class Playlist
-  attr_accessor :playlist
+  attr_reader :playlist
 
   def initialize(*songs)
     @playlist = songs
@@ -83,7 +83,7 @@ class Song
 end
 
 class Playlist
-  attr_accessor :playlist
+  attr_reader :playlist
 
   def initialize(*songs)
     @playlist = songs
